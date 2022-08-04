@@ -1,0 +1,513 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/images/ana.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 100%;
+    height: 6rem;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.nav-brand{
+    color: chocolate;
+    font-size: 3rem;
+    margin: 0 2rem;
+    letter-spacing: 0.2rem;
+    font-weight: bolder;
+}
+.nav-brand::first-letter{
+    color:rgb(151, 182, 17);
+}
+.navlist{
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 323232;
+}
+.hamburger1{
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 2px solid rgb(188, 41, 41);
+    border-radius: 50%;
+    display: none;
+    margin-right: 2rem;
+    z-index: 999999;
+}
+.hamburger1 i{
+    font-size: 3rem;
+    color: #fff;
+}
+#check:checked ~ ul{
+    display: block;
+    width: 50vw;
+    height: 100vh;
+    background-color: #000000;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right:0;
+    top:0;
+    z-index: 1000;
+}
+#check:checked + ::-webkit-scrollbar{
+    visibility:collapse !important;
+}
+.hamburger1 i:nth-child(1){
+    display: block;
+}
+.hamburger1 i:nth-child(2){
+    display: none;
+}
+#check:checked + label .hamburger1 i:nth-child(1){
+    display: none;
+}
+#check:checked + label .hamburger1 i:nth-child(2){
+    display: block;
+}
+
+.hamburger{
+    width:2rem;
+    height:0.2rem;
+    background-color:rgb(153, 153, 153);
+
+}
+#check{
+    display: none;
+}
+.navlist ul{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+}
+
+.navlist ul li{
+    list-style-type: none;
+    text-align: center;
+}
+.navlist ul li a{
+    color: chocolate;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    font-variant: small-caps;
+    text-align: center;
+}
+.navlist ul li a:hover{
+    color:brown;
+}
+.hero{
+    position:absolute;
+    top:40%;
+    left:4rem;
+    padding: 2rem;
+    overflow: hidden;
+}
+.hero h1{
+    font-size: 4rem;
+    width: fit-content;
+    animation: text_reveal 1s ease forwards;
+    animation-delay: 2.1s;
+    color:transparent;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2rem;
+    
+}
+
+.hero h1::before{
+    content: "";
+    width: 10rem;
+    height: 10rem;
+    background-color: rgba(45, 149, 52, 0.907);
+    position:absolute;
+    top: 0;
+    left: -300px;
+    animation:sadık .8s ease forwards;
+    animation-delay: 2s;
+    
+}
+.hero h1:nth-child(2){
+    animation-delay: 3.2s;
+}
+.hero h1:nth-child(3){
+    animation-delay: 4.3s;
+}
+.hero h1:nth-child(2)::before{
+    animation-delay: 3.1s;
+}
+.hero h1:nth-child(3)::before{
+    animation-delay: 4.1s;
+}
+.hero button{
+    background-color: chocolate;
+    padding: 1.5rem;
+    border:1px solid azure;
+    border-radius: 20px;
+    
+}
+.hero button a{
+    color: azure;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.hero button:hover{
+    border:2px solid chocolate;
+    background-color: azure;
+    color:chocolate;
+}
+.hero button:hover a{
+    color:chocolate;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 90px auto;
+    padding: 5rem;
+}
+.services_top{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.services_top h1{
+    color: chocolate;
+    font-size: 5rem;
+}
+.services_top p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.services_bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.service-item {
+    width: 22rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-image: url(images/ana.webp);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 20px 20px;
+    box-shadow: 5px 5px 5px gray;
+    transition: all .5s ease-in;
+}
+.service-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    opacity: 0.9;
+    z-index: -1;
+}
+.service-item:hover{
+    transform:scale(1.1);
+}
+.service-item img{
+    width: 5rem;
+    margin-bottom: 2rem;
+}
+.service-item h1{
+    font-size: 2rem;
+    color: rgb(1, 4, 12);
+    margin-bottom: 2rem;
+}
+.service-item p{
+    font-size: 1.5rem;
+    color: rgb(233, 233, 233);
+    text-align: left;
+    margin-bottom: 3rem;
+
+}
+
+.about{
+    max-width: 1200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10rem auto;
+    padding: 5rem;
+}
+
+.about .image{
+    width: 25rem;
+    height: 36rem;
+    border: 1rem solid red;
+    position: relative;
+}
+.about .image img{
+    width: 20rem;
+    height: 34rem;
+    position: absolute;
+    top: -2rem;
+    left: 2rem;
+}
+.span1{
+    width: 1.5rem;
+    height: 1rem;
+    background-color: rgb(254, 254, 254);
+    position: absolute;
+    top: -1rem;
+    left: .6rem;
+}
+.span2{
+    width: 1rem;
+    height: 1.5rem;
+    background-color: rgb(254, 254, 254);
+    position: absolute;
+    bottom:.6rem;
+    right: -1rem;
+} 
+.resume{
+    width: 100%;
+    margin:-5rem 10rem ;
+    padding-bottom: 2rem;
+
+}
+.resume .abouthead{
+    font-size: 5rem;
+    font-weight: bolder;
+    margin: 2rem 0;
+}
+.resume .abouthead span{
+    color: chocolate;
+}
+.title{
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-bottom: 2rem;
+}
+.resume p{
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    color:chocolate;
+}
+.resume button{
+    font-size: 2rem;
+    padding: 1rem 1rem;
+    border: 2px solid red;
+    background-color: #fff;
+
+}
+.resume button:hover{
+    background-color: red;
+    color: white;
+}
+
+
+.contact{
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25rem auto;
+}
+.contact-title{
+    font-size: 5rem;
+    font-weight: bold;
+}
+.contact-title span{
+    padding-left:2rem ;
+    color: chocolate;
+}
+
+.container-card{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+.contact-item{
+    width: 30rem;
+    height: 15rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #29323c;
+    transition: 0.5 all ease;
+}
+.contact-item:hover{
+    box-shadow: 1px 1px 2px #29323c;
+}
+.item-content{
+    margin-left: 2rem;
+}
+
+.item-content h3{
+    color: chocolate;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.item-content p{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+footer{
+    background-color: rgb(74, 157, 129);
+    height: 18vh;
+    text-align: center;
+    color: rgb(143, 80, 36);
+    position: relative;
+}
+footer h1{
+    font-size:3rem;
+    margin: .5rem 0;
+}
+footer p{
+    font-size:2rem;
+    padding:.5rem 0;
+}
+footer div i{
+    font-size: 2rem; 
+    padding-right: 2rem;
+}
+#return1{
+    position:absolute;
+    right: 0rem;
+    bottom: 0;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #485563;
+}
+@media (min-width:1200px){
+    .hamburger{
+        z-index:23514;
+    }
+}
+@media (max-width:1200px){
+    
+    .hamburger1{
+        display:flex;
+    }
+    .navlist ul{
+        display:none;
+    }
+}
+
+@media (max-width:768px){
+    
+    .service-item{
+        width: 80%;
+    }
+    .about{
+        flex-direction: column;
+        gap:50px;
+        position:relative;
+        padding-bottom: 5rem;
+    }
+    .image{
+        margin: 0 auto;
+        left:-15px;
+    }
+    .about .image img{
+        width: 25rem;
+        
+    }
+    .resume{
+        width: 80%;
+        position: absolute;
+        top:40rem;
+        
+        margin: 0 auto;
+        text-align: center;
+        
+    }
+    .contact{
+        position: relative;
+        margin-top: 50rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes text_reveal {
+    100% {
+        color: chocolate;
+    }
+}
+
+
+@keyframes sadık{
+    100% {
+        transform: translate(550px);
+    }
+}
